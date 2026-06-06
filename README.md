@@ -14,7 +14,7 @@ This project showcases my skills, projects, achievements, and contact informatio
 ## ✨ Features
 
 - 🎨 Modern & Responsive UI Design
-- 🌙 Dark Theme Interface
+- 🌙 Dark Theme and Light Theme Toggle
 - ⚡ Smooth Animations & Transitions
 - 📱 Mobile Friendly Layout
 - 🧑 About Me Section
@@ -37,3 +37,5 @@ My Portfolio/
 ├── my.jpg              # Profile image
 ├── thankyou.html       # Thank You page
 └── README.md           # Project documentation
+
+![Portfolio Preview](preview.png)
