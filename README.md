@@ -15,7 +15,7 @@ https://pragyanacharya.com
 # ✨ Features
 
 * 🎨 Modern & Attractive UI Design
-* 🌙 Dark Mode Interface
+* 🌙 Dark Mode & Light Mode Toggle
 * 📱 Fully Responsive Website
 * ⚡ Smooth Scrolling & Animations
 * 👨‍💻 About Me Section
@@ -28,6 +28,11 @@ https://pragyanacharya.com
 
 ---
 
+# ✨ Extra-Features
+
+* Maintenance Mode in script.js You can Do True or False in the Code Accordig to Your Needs.
+
+---
 # 🛠 Tech-Stack
 
 * HTML5
@@ -58,14 +63,13 @@ My Portfolio/
 ![Portfolio Preview](preview.png)
 ```
 
----
 
 # ⚙️ Installation & Setup
 
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/Pragyan-Acharya/Personal-Portfolio-Website.git
 ```
 
 ## 2️⃣ Open the Project Folder
