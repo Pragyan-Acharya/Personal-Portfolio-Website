@@ -9,8 +9,6 @@ This project showcases my skills, projects, achievements, and contact informatio
 
 🔗 [View Portfolio Website](https://pragyanacharya.com/)
 
-> Replace the above link with your actual deployed portfolio URL.
-
 ---
 
 ## ✨ Features
