@@ -55,14 +55,7 @@ My Portfolio/
 
 # 📸 Website Preview
 
-Add your website screenshot here.
-
-```md
-<h2 align="center">📸 Website Preview</h2>
-
-<p align="center">
-  <img src="preview.png" alt="Portfolio Preview" width="100%">
-</p>
+![Portfolio Preview](preview.png)
 ```
 
 ---
