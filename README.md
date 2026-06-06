@@ -58,7 +58,11 @@ My Portfolio/
 Add your website screenshot here.
 
 ```md
-![Portfolio Preview](preview.png)
+<h2 align="center">📸 Website Preview</h2>
+
+<p align="center">
+  <img src="preview.png" alt="Portfolio Preview" width="100%">
+</p>
 ```
 
 ---
