@@ -63,7 +63,7 @@ My Portfolio/
 ![Portfolio Preview](preview.png)
 ```
 
----
+```
 # ⚙️ Installation & Setup
 
 ## 1️⃣ Clone the Repository
