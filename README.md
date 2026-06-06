@@ -75,7 +75,7 @@ git clone https://github.com/Pragyan-Acharya/Personal-Portfolio-Website.git
 ## 2️⃣ Open the Project Folder
 
 ```bash
-cd your-repository-name
+cd Personal-Portfolio-Website
 ```
 
 ## 3️⃣ Run the Website
