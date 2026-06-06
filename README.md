@@ -30,7 +30,7 @@ https://pragyanacharya.com
 
 # ✨ Extra-Features
 
-* Maintenance Mode in script.js You can Do True or False in the Code Accordig to Your Needs.
+* Maintenance Mode in script.js You can Do True or False in the Code According to Your Needs.
 
 ---
 # 🛠 Tech-Stack
