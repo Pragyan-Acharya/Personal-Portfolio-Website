@@ -8,9 +8,7 @@ This project represents my digital portfolio where I showcase my skills, project
 # 🚀 Live Demo
 
 🔗 **Portfolio Website:**
-https://your-portfolio-link.com
-
-> Replace this link with your actual deployed website URL.
+https://pragyanacharya.com
 
 ---
 
@@ -30,7 +28,7 @@ https://your-portfolio-link.com
 
 ---
 
-# 🛠 Technologies Used
+# 🛠 Tech-Stack
 
 * HTML5
 * CSS3
@@ -151,4 +149,4 @@ If you like this project, give it a ⭐ on GitHub!
 
 # © Copyright
 
-Copyright © 2024 by Pragyan Acharya | All Rights Reserved
+Copyright © 2024 by Pragyan <span>Acharya</span> | All Rights Reserved
