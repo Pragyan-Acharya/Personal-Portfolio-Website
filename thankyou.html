@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Your Message</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #e8eaf6, #c8e6c9);
+      color: #333;
+      overflow-x: hidden;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+      max-width: 650px;
+      width: 90%;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .checkmark {
+      color: #2e7d32;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #2e7d32;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .message {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #555;
+      min-height: 3.2em;
+    }
+    .progress-container {
+      width: 80%;
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 100%;
+      background-color: #2e7d32;
+      border-radius: 4px;
+      animation: progress 5s linear forwards;
+    }
+    @keyframes progress {
+      from { width: 100%; }
+      to { width: 0; }
+    }
+    .countdown {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #2e7d32;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: 500;
+      transition: transform 0.3s, background-color 0.3s;
+      animation: bounce 0.5s ease-in-out 1s 2;
+      margin: 5px;
+    }
+    .btn:hover {
+      background-color: #1b5e20;
+      transform: scale(1.05);
+    }
+    .cancel-btn {
+      background-color: #888;
+    }
+    .cancel-btn:hover {
+      background-color: #666;
+    }
+    .share-buttons {
+      margin: 20px 0;
+    }
+    .share-btn {
+      background-color: #555;
+      font-size: 0.9em;
+      padding: 8px 16px;
+    }
+    .share-btn.twitter {
+      background-color: #1DA1F2;
+    }
+    .share-btn.linkedin {
+      background-color: #0077B5;
+    }
+    .share-btn:hover {
+      filter: brightness(90%);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.9em;
+      color: #777;
+    }
+    .footer a {
+      color: #2e7d32;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 20px; }
+      h1 { font-size: 2em; }
+      .message, .countdown { font-size: 1em; }
+      .btn, .share-btn { font-size: 0.9em; padding: 8px 16px; }
+      .checkmark { font-size: 2.5em; }
+      .progress-container { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <i class="fa-solid fa-check-circle checkmark"></i>
+    <h1>Thank You!</h1>
+    <p class="message" id="message"></p>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+    <p class="countdown" id="countdown">Redirecting in <span id="timeLeft">5</span> seconds... <a href="#" class="btn cancel-btn" onclick="cancelRedirect()">Cancel</a></p>
+    <a href="/index.html" class="btn">Back to Portfolio</a>
+    
+    <div class="footer">
+      <p>Let's stay connected!</p>
+      
+    </div>
+  </div>
+  <script>
+    // Confetti animation
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.6 },
+      colors: ['#2e7d32', '#1b5e20', '#c8e6c9']
+    });
+
+    // Typewriter effect
+    const messageText = "Your message has been successfully sent. I'm excited to connect and will respond as soon as possible!";
+    const messageElement = document.getElementById('message');
+    const totalDuration = 5000; // 5 seconds
+    const charCount = messageText.length;
+    const typingSpeed = totalDuration / charCount; // Time per character
+    let i = 0;
+
+    function typeWriter() {
+      if (i < messageText.length) {
+        messageElement.textContent += messageText.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
+      }
+    }
+    setTimeout(typeWriter, 500);
+
+    // Countdown timer
+    let timeLeft = 20; // 5 seconds to match progress bar and typewriter
+    const countdownElement = document.getElementById('timeLeft');
+    let redirectTimer = setInterval(() => {
+      timeLeft--;
+      countdownElement.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(redirectTimer);
+        window.location.href = '/index.html';
+      }
+    }, 1000);
+
+    // Cancel redirect
+    function cancelRedirect() {
+      clearInterval(redirectTimer);
+      document.getElementById('countdown').textContent = 'Redirect cancelled. Take your time!';
+      document.querySelector('.progress-container').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
